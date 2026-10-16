@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Quick Question...</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 420px;
+            width: 100%;
+        }
+        h1 { color: #ff477e; font-size: 2rem; margin-bottom: 30px; }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 50px;
+            align-items: center;
+        }
+        button, .wa-link {
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #yes-btn {
+            background-color: #ff477e;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 71, 126, 0.4);
+        }
+        #no-btn { background-color: #6c757d; color: white; z-index: 999; }
+        .wa-link {
+            background-color: #25D366;
+            color: white;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        .success-content { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .success-text { font-size: 1.8rem; color: #ff477e; font-weight: bold; }
+        .photo-frame {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 15px;
+            border: 5px solid #ff477e;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="quiz-card">
+        <h1>Do you miss me?</h1>
+        <div class="btn-container">
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+
+    <div class="card" id="success-card" style="display: none; max-width: 500px;">
+        <div class="success-content">
+            <div>
+                <div class="success-text">I miss you too! ❤️</div>
+                <a href="https://wa.me" target="_blank" class="wa-link">Tell me on WhatsApp</a>
+            </div>
+            <img src="vin2.jpg" alt="My Photo" class="photo-frame">
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('no-btn');
+        const yesBtn = document.getElementById('yes-btn');
+        const quizCard = document.getElementById('quiz-card');
+        const successCard = document.getElementById('success-card');
+
+        function moveNoButton() {
+            const padding = 30;
+            const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+            const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        noBtn.addEventListener('mouseover', moveNoButton);
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        yesBtn.addEventListener('click', function() {
+            quizCard.style.display = 'none';
+            successCard.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
