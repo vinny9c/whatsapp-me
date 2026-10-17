@@ -1,219 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question for You...</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #ffe5ec 0%, #ffc2d1 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 45px 35px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(255, 71, 126, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 440px;
-            width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 10;
-            animation: cardAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes cardAppear {
-            from { opacity: 0; transform: scale(0.9) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        h1 {
-            color: #ff477e;
-            font-size: 2.2rem;
-            margin-bottom: 35px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            height: 60px;
-            align-items: center;
-        }
-
-        button, .wa-link {
-            padding: 14px 40px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.2s ease;
-        }
-
-        #yes-btn {
-            background: linear-gradient(135deg, #ff477e 0%, #ff7096 100%);
-            color: white;
-            box-shadow: 0 6px 20px rgba(255, 71, 126, 0.4);
-            animation: heartbeat 1.5s infinite;
-        }
-
-        #yes-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 71, 126, 0.5);
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            14% { transform: scale(1.08); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.08); }
-            70% { transform: scale(1); }
-        }
-
-        #no-btn {
-            background-color: #f1f3f5;
-            color: #495057;
-            border: 1px solid #dee2e6;
-            z-index: 999;
-        }
-
-        .wa-link {
-            background: linear-gradient(135deg, #25D366 0%, #1ebd58 100%);
-            color: white;
-            margin-top: 20px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .wa-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .success-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .success-text {
-            font-size: 2rem;
-            color: #ff477e;
-            font-weight: 800;
-        }
-
-        .photo-wrapper {
-            position: relative;
-            margin-top: 10px;
-        }
-
-        .photo-frame {
-            width: 100%;
-            max-width: 260px;
-            height: auto;
-            border-radius: 20px;
-            border: 6px solid #ffffff;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .heart-particle {
-            position: absolute;
-            color: #ff7096;
-            font-size: 1.5rem;
-            pointer-events: none;
-            z-index: 1;
-            animation: floatUp 4s linear infinite;
-        }
-
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you miss me? 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle at 20% 20%,#ff9a9e 0%,#fecfef 40%,#ffc2d1 100%);font-family:'Inter',sans-serif;overflow:hidden;padding:20px;position:relative}
+body::before{content:"";position:absolute;width:700px;height:700px;background:radial-gradient(circle,#ff477e,transparent 70%);filter:blur(90px);top:-200px;left:-200px;opacity:.5;animation:drift 8s infinite alternate}
+body::after{content:"";position:absolute;width:600px;height:600px;background:radial-gradient(circle,#8b5cf6,transparent 70%);filter:blur(90px);bottom:-200px;right:-200px;opacity:.4;animation:drift 9s infinite alternate-reverse}
+@keyframes drift{to{transform:translate(30px,40px) scale(1.1)}}
+.card{width:100%;max-width:460px;background:rgba(255,255,255,.88);backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.8);border-radius:32px;padding:42px 32px;box-shadow:0 25px 60px rgba(255,71,126,.18),0 5px 15px rgba(0,0,0,.05);text-align:center;position:relative;z-index:10;animation:pop .7s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+h1{font-family:'Space Grotesk',sans-serif;color:#ff1f6b;font-size:2.4rem;line-height:1.1;margin-bottom:10px}
+.sub{color:#8b5a6b;font-size:.95rem;margin-bottom:28px}
+.quote-box{background:linear-gradient(135deg,#fff0f3,#fff);border:1px solid #ffd6e0;border-radius:16px;padding:14px 16px;margin-bottom:28px;min-height:64px;display:grid;place-items:center}
+.quote-text{color:#ff477e;font-size:.95rem;font-weight:600;font-style:italic;line-height:1.4;transition:.3s}
+.btns{display:flex;justify-content:center;gap:22px;align-items:center;height:62px}
+button,.wa{padding:14px 38px;border-radius:50px;border:none;font-weight:800;font-size:1.1rem;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+#yes{background:linear-gradient(135deg,#ff1f6b,#ff7096);color:#fff;box-shadow:0 12px 28px rgba(255,31,107,.4);animation:beat 1.4s infinite}
+#yes:hover{transform:scale(1.06)}
+@keyframes beat{0%{transform:scale(1)}15%{transform:scale(1.1)}30%{transform:scale(1)}45%{transform:scale(1.1)}70%{transform:scale(1)}}
+#no{background:#f1f3f5;color:#495057;border:1px solid #dee2e6;z-index:999}
+.wa{background:linear-gradient(135deg,#25D366,#1ebd58);color:#fff;box-shadow:0 12px 28px rgba(37,211,102,.35);margin-top:18px;width:100%}
+.wa:hover{transform:translateY(-2px)}
+.success{display:flex;flex-direction:column;gap:22px;align-items:center}
+.success-title{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;color:#ff1f6b;font-weight:800}
+.photo{width:100%;max-width:280px;border-radius:22px;border:6px solid #fff;box-shadow:0 15px 40px rgba(0,0,0,.15);object-fit:cover}
+.hearts{position:absolute;pointer-events:none;z-index:1;animation:up 4s linear infinite}
+@keyframes up{0%{transform:translateY(110vh) rotate(0deg) scale(.8);opacity:1}100%{transform:translateY(-10vh) rotate(360deg) scale(1.4);opacity:0}}
+.q-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.q-dots span{width:6px;height:6px;border-radius:50%;background:#ffc2d1;transition:.3s}
+.q-dots span.on{background:#ff477e;width:18px}
+</style>
 </head>
 <body>
+<div class="card" id="q">
+<h1>Do you miss me? 🥺</h1>
+<p class="sub">Be honest...</p>
+<div class="quote-box"><p class="quote-text" id="qt">“Distance means so little when someone means so much.”</p></div>
+<div class="q-dots" id="dots"></div>
+<div class="btns">
+<button id="yes">Yes 💖</button>
+<button id="no">No</button>
+</div>
+</div>
 
-    <div class="card" id="quiz-card">
-        <h1>Do you miss me?</h1>
-        <div class="btn-container">
-            <button id="yes-btn">Yes</button>
-            <button id="no-btn">No</button>
-        </div>
-    </div>
+<div class="card" id="s" style="display:none;max-width:520px">
+<div class="success">
+<div class="success-title">I miss you too! ❤️</div>
+<div class="quote-box" style="width:100%"><p class="quote-text">“You are my today and all of my tomorrows.” — Leo Christopher</p></div>
+<img src="vin2.jpg" alt="Me" class="photo" onerror="this.src='https://picsum.photos/400/500?random=1'">
+<a class="wa" href="https://wa.me/254745169071?text=Hello%20Vinny%20😘%20I%20miss%20you%20too%20❤️" target="_blank">Tell me on WhatsApp 💬</a>
+<a class="wa" href="tel:+254745169071" style="background:#0A1931">📞 Call Me: 0745169071</a>
+</div>
+</div>
 
-    <div class="card" id="success-card" style="display: none; max-width: 500px;">
-        <div class="success-content">
-            <div>
-                <div class="success-text">I miss you too! ❤️</div>
-                <a href="https://wa.me" target="_blank" class="wa-link">Tell me on WhatsApp</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="vin2.jpg" alt="My Photo" class="photo-frame">
-            </div>
-        </div>
-    </div>
+<script>
+const quotes=[
+"“Distance means so little when someone means so much.”",
+"“I miss you a little, a little too much, a little too often.”",
+"“You are the best thing that ever happened to me.”",
+"“Every moment without you feels like forever.”",
+"“I think about you constantly, whether it's with my mind or my heart.”",
+"“Missing you is my hobby, caring for you is my job.”"
+];
+let qi=0;
+const qt=document.getElementById('qt');
+const dots=document.getElementById('dots');
+quotes.forEach((_,i)=>{
+let d=document.createElement('span');
+if(i===0)d.className='on';
+dots.appendChild(d);
+});
+setInterval(()=>{
+qi=(qi+1)%quotes.length;
+qt.style.opacity=0;
+setTimeout(()=>{
+qt.textContent=quotes[qi];
+qt.style.opacity=1;
+[...dots.children].forEach((c,j)=>c.className=j===qi?'on':'');
+},200);
+},2500);
 
-    <script>
-        const noBtn = document.getElementById('no-btn');
-        const yesBtn = document.getElementById('yes-btn');
-        const quizCard = document.getElementById('quiz-card');
-        const successCard = document.getElementById('success-card');
-
-        function moveNoButton() {
-            const padding = 40;
-            const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-            const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
-            const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
-            noBtn.style.position = 'fixed';
-            noBtn.style.left = randomX + 'px';
-            noBtn.style.top = randomY + 'px';
-        }
-
-        noBtn.addEventListener('mouseover', moveNoButton);
-        noBtn.addEventListener('mouseenter', moveNoButton);
-        noBtn.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            moveNoButton();
-        });
-
-        function createFloatingHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-particle');
-            heart.innerHTML = '❤️😘😍';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            heart.style.fontSize = (Math.random() * 1 + 1) + 'rem';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-
-        yesBtn.addEventListener('click', function() {
-            quizCard.style.display = 'none';
-            successCard.style.display = 'block';
-            setInterval(createFloatingHeart, 300);
-        });
-    </script>
+const no=document.getElementById('no');
+const yes=document.getElementById('yes');
+const qc=document.getElementById('q');
+const sc=document.getElementById('s');
+function move(){
+const pad=30;
+const maxX=window.innerWidth-no.offsetWidth-pad;
+const maxY=window.innerHeight-no.offsetHeight-pad;
+no.style.position='fixed';
+no.style.left=Math.max(pad,Math.random()*maxX)+'px';
+no.style.top=Math.max(pad,Math.random()*maxY)+'px';
+}
+no.addEventListener('mouseover',move);
+no.addEventListener('touchstart',e=>{e.preventDefault();move();});
+function heart(){
+const h=document.createElement('div');
+h.className='hearts';
+h.textContent=['❤️','💖','😍','💘','😘'][Math.floor(Math.random()*5)];
+h.style.left=Math.random()*100+'vw';
+h.style.fontSize=(Math.random()*1+1.2)+'rem';
+h.style.animationDuration=(Math.random()*2+3)+'s';
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+yes.addEventListener('click',()=>{
+qc.style.display='none';
+sc.style.display='block';
+setInterval(heart,220);
+for(let i=0;i<12;i++)setTimeout(heart,i*120);
+});
+</script>
 </body>
-</html>
+    </html>
