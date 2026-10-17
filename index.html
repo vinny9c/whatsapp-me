@@ -4,39 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TOP SECRET - For You Only</title>
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Grotesk:wght@700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#0e0e0e url('https://www.transparenttextures.com/patterns/paper-fibers.png');font-family:'Inter',sans-serif;padding:20px;position:relative;overflow:hidden}
-body::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,71,126,.25),transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,211,0,.15),transparent 40%)}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:#1a1a1a;font-family:'Inter',sans-serif;padding:20px;position:relative;overflow:hidden}
+body::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,71,126,.2),transparent 50%)}
 .envelope{position:absolute;width:90%;max-width:600px;height:420px;background:#e8d5b5;transform:rotate(-1deg);border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:1}
-.envelope::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,#d9c19a,#e8d5b5);clip-path:polygon(0 0,50% 60%,100% 0)}
-.card{width:100%;max-width:480px;background:#fffdf7;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(0,0,0,.05) 31px,rgba(0,0,0,.05) 32px);border:1px solid #d9c19a;border-radius:6px;padding:38px 32px 32px;box-shadow:0 25px 60px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.4);z-index:10;position:relative;transform:rotate(0.5deg)}
-.stamp{position:absolute;top:-18px;right:20px;background:#ff1f6b;color:#fff;font-family:'Special Elite',monospace;font-weight:700;padding:6px 14px;border:3px double #fff;transform:rotate(12deg);letter-spacing:1px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-h1{font-family:'Special Elite',monospace;color:#1a1a1a;font-size:2.2rem;line-height:1.1}
-.sub{font-family:'Special Elite',monospace;color:#6b5a3a;margin:8px 0 18px;font-size:.95rem}
-.quote-box{border-left:4px solid #ff1f6b;padding:10px 14px;margin:16px 0;background:rgba(255,71,126,.06);min-height:62px;display:grid;place-items:center}
-.quote-text{font-family:'Special Elite',monospace;color:#2b2b2b;font-weight:700;font-style:italic}
-.btns{display:flex;justify-content:center;gap:18px;height:62px;align-items:center;margin-top:10px}
-button,.wa{padding:12px 32px;border-radius:2px;border:2px solid #1a1a1a;font-weight:800;font-size:1rem;cursor:pointer;text-decoration:none;transition:.15s;font-family:'Special Elite',monospace;text-transform:uppercase;letter-spacing:.5px}
-#yes{background:#1a1a1a;color:#fff;box-shadow:4px 4px 0 #ff1f6b}
-#yes:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #ff1f6b}
+.envelope::before{content:"";position:absolute;top:0;left:0;right:0;height:50%;background:#d9c19a;clip-path:polygon(0 0,50% 60%,100% 0)}
+.card{width:100%;max-width:480px;background:#fffdf7;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(0,0,0,.04) 31px,rgba(0,0,0,.04) 32px);border:1px solid #d9c19a;border-radius:6px;padding:34px 28px 28px;box-shadow:0 25px 60px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.4);z-index:10;position:relative;transform:rotate(0.5deg)}
+.stamp{position:absolute;top:-14px;right:18px;background:#0A1931;color:#fff;font-family:'Special Elite',monospace;padding:5px 12px;border:2px dashed #fff;transform:rotate(10deg);font-size:.75rem;letter-spacing:1px}
+h1{font-family:'Special Elite',monospace;color:#1a1a1a;font-size:1.9rem}
+.sub{font-family:'Special Elite',monospace;color:#6b5a3a;margin:6px 0 14px;font-size:.85rem}
+.quote-box{border-left:4px solid #ff1f6b;padding:8px 12px;margin:12px 0;background:rgba(255,71,126,.06)}
+.quote-text{font-family:'Special Elite',monospace;color:#2b2b2b;font-weight:700;font-style:italic;font-size:.9rem}
+
+/* ICON FIX HERE */
+.photo-wrap{position:relative;width:68px;height:68px;margin:12px auto 8px}
+.photo{width:68px;height:68px;border-radius:50%;border:2px solid #1a1a1a;object-fit:cover;object-position:top center;box-shadow:0 0 0 3px #fff,3px 3px 0 #1a1a1a;display:block;background:#eee}
+.online-dot{position:absolute;bottom:1px;right:1px;width:16px;height:16px;background:#25D366;border:2.5px solid #fffdf7;border-radius:50%}
+.name-line{font-family:'Special Elite',monospace;text-align:center;font-size:.85rem;color:#1a1a1a;margin-bottom:10px}
+.name-line b{color:#ff1f6b}
+
+.btns{display:flex;justify-content:center;gap:14px;height:56px;align-items:center}
+button,.wa{padding:11px 28px;border-radius:2px;border:2px solid #1a1a1a;font-weight:800;font-size:.9rem;cursor:pointer;text-decoration:none;font-family:'Special Elite',monospace;text-transform:uppercase}
+#yes{background:#1a1a1a;color:#fff;box-shadow:3px 3px 0 #ff1f6b}
 #no{background:#fff;color:#1a1a1a;z-index:999}
-.wa{background:#25D366;color:#fff;border-color:#1a1a1a;box-shadow:4px 4px 0 #1a1a1a;width:100%;margin-top:12px;text-align:center;display:block}
-.wa2{background:#0A1931;color:#fff;border-color:#0A1931}
-.photo{width:100%;max-width:260px;border-radius:2px;border:4px solid #1a1a1a;transform:rotate(-2deg);box-shadow:6px 6px 0 rgba(0,0,0,.2);margin:12px auto;display:block}
-textarea{width:100%;min-height:90px;background:#fffef5;border:2px dashed #d9c19a;border-radius:4px;padding:12px;font-family:'Special Elite',monospace;font-size:.95rem;resize:none;outline:none;margin-top:10px}
-textarea:focus{border-color:#ff1f6b}
-.music-bar{display:flex;align-items:center;justify-content:center;gap:10px;background:#1a1a1a;color:#ffe600;border-radius:2px;padding:8px 12px;font-family:'Special Elite',monospace;font-size:.8rem;margin:12px 0;border:1px dashed #ffe600}
-.dot{width:8px;height:8px;background:#ff1f6b;border-radius:50%;animation:beat 1s infinite}
+.wa{background:#25D366;color:#fff;box-shadow:3px 3px 0 #1a1a1a;width:100%;margin-top:10px;text-align:center;display:block;font-size:.85rem}
+.wa2{background:#0A1931}
+textarea{width:100%;min-height:78px;background:#fffef5;border:2px dashed #d9c19a;border-radius:4px;padding:10px;font-family:'Special Elite',monospace;font-size:.85rem;resize:none;outline:none;margin-top:8px}
+.music-bar{display:flex;align-items:center;justify-content:center;gap:8px;background:#1a1a1a;color:#ffe600;border-radius:2px;padding:7px 10px;font-family:'Special Elite',monospace;font-size:.72rem;margin:10px 0;border:1px dashed #ffe600}
+.dot{width:7px;height:7px;background:#ff1f6b;border-radius:50%;animation:beat 1s infinite}
 @keyframes beat{0%,70%{transform:scale(1)}15%,45%{transform:scale(1.3)}}
 .hearts{position:absolute;pointer-events:none;animation:up 4s linear infinite;z-index:20}
-@keyframes up{0%{transform:translateY(110vh) rotate(0) scale(.8);opacity:1}100%{transform:translateY(-10vh) rotate(360deg) scale(1.4);opacity:0}}
+@keyframes up{0%{transform:translateY(110vh) scale(.8);opacity:1}100%{transform:translateY(-10vh) scale(1.4);opacity:0}}
 #yt-player{position:absolute;width:1px;height:1px;opacity:0}
-.q-dots{display:flex;gap:6px;justify-content:center;margin:10px 0}
-.q-dots span{width:6px;height:6px;background:#d9c19a;border-radius:50%}
-.q-dots span.on{background:#ff1f6b;width:18px}
-.status{font-family:'Special Elite',monospace;font-size:.8rem;margin-top:8px;color:#0A1931;display:none}
+.q-dots{display:flex;gap:5px;justify-content:center;margin:8px 0}
+.q-dots span{width:5px;height:5px;background:#d9c19a;border-radius:50%}
+.q-dots span.on{background:#ff1f6b;width:16px}
+.status{font-family:'Special Elite',monospace;font-size:.75rem;margin-top:8px;color:#0A1931;display:none;text-align:center}
 </style>
 </head>
 <body>
@@ -44,86 +49,66 @@ textarea:focus{border-color:#ff1f6b}
 <div id="yt-player"></div>
 
 <div class="card" id="q">
-<div class="stamp">TOP SECRET</div>
+<div class="stamp">DECRYPTED</div>
 <h1>Do you miss me? 🥺</h1>
-<p class="sub">CLASSIFIED FILE // FOR YOUR EYES ONLY<br>ORIGIN: VINNY — NAIROBI, KE</p>
+<p class="sub">CLASSIFIED // EYES ONLY — FROM: VINNY</p>
 <div class="quote-box"><p class="quote-text" id="qt">“Wewe na mimi, hakuna wa kutuachanisha.”</p></div>
 <div class="q-dots" id="dots"></div>
 <div class="btns">
-<button id="yes">YES — I DO ❤️</button>
+<button id="yes">YES ❤️</button>
 <button id="no">No</button>
 </div>
-<p style="font-family:'Special Elite';font-size:.65rem;color:#8a7a5a;margin-top:14px">REF: JM-Sawa-2023 / 0745169071</p>
 </div>
 
-<div class="card" id="s" style="display:none;max-width:540px;transform:rotate(-0.5deg)">
-<div class="stamp" style="background:#0A1931">DECRYPTED</div>
-<h1 style="font-size:1.9rem">I miss you too! ❤️</h1>
+<div class="card" id="s" style="display:none">
+<div class="stamp" style="background:#ff1f6b">I MISS YOU TOO</div>
+<h1>I miss you too! ❤️</h1>
 <div class="quote-box"><p class="quote-text">“Wewe na mimi, milele...” — Jay Melody</p></div>
-<img src="vin2.jpg" alt="Me" class="photo" onerror="this.style.display='none'">
+
+<!-- SMALL ICON NOW -->
+<div class="photo-wrap">
+<img src="vin2.jpg" alt="Vinny" class="photo">
+<div class="online-dot"></div>
+</div>
+<div class="name-line"><b>Vinny</b> • Online • Nairobi, KE • 0745169071</div>
+
 <div class="music-bar"><div class="dot"></div>🎶 Jay Melody — Sawa [Wewe na Mimi] — Playing</div>
 
-<p style="font-family:'Special Elite';font-size:.9rem;margin:6px 0">Write a secret reply — it will go DIRECT to Vinny:</p>
+<p style="font-family:'Special Elite';font-size:.8rem">Write a secret reply — DIRECT to Vinny:</p>
 <textarea id="secretMsg" placeholder="Type here... e.g. I miss you too Vinny 😘"></textarea>
-<p class="status" id="status">✓ Message delivered directly to Vinny's WhatsApp!</p>
+<p class="status" id="status"></p>
 
 <a class="wa" id="directBtn" href="javascript:void(0)">SEND SECRET DIRECT TO VINNY 🔒</a>
-<a class="wa wa2" href="https://wa.me/254745169071?text=Hello%20Vinny%20😘%20I%20miss%20you%20too%20❤️" target="_blank">Open in WhatsApp (Backup)</a>
-<p style="font-family:'Special Elite';font-size:.65rem;color:#8a7a5a;margin-top:10px">No app opening needed if API key is set. See code comment.</p>
+<a class="wa wa2" href="https://wa.me/254745169071?text=Hello%20Vinny%20😘%20I%20miss%20you%20too%20❤️" target="_blank">OPEN IN WHATSAPP (BACKUP)</a>
 </div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-let player;
-const YT_ID = "-ZLUogRX29Y";
+let player;const YT_ID="-ZLUogRX29Y";
 function onYouTubeIframeAPIReady(){
-player = new YT.Player('yt-player',{
-videoId:YT_ID,
-playerVars:{playsinline:1,loop:1,playlist:YT_ID},
-events:{onReady:e=>e.target.setVolume(70)}
-});
+player=new YT.Player('yt-player',{videoId:YT_ID,playerVars:{playsinline:1,loop:1,playlist:YT_ID},events:{onReady:e=>e.target.setVolume(70)}});
 }
-const quotes=["“Wewe na mimi, hakuna wa kutuachanisha.”","“Distance means so little when someone means so much.”","“I miss you a little, a little too much, a little too often.”","“You are the best thing that ever happened to me.”"];
+const quotes=["“Wewe na mimi, hakuna wa kutuachanisha.”","“Distance means so little when someone means so much.”","“I miss you a little too much.”","“You are my today and all of my tomorrows.”"];
 let qi=0;const qt=document.getElementById('qt');const dots=document.getElementById('dots');
 quotes.forEach((_,i)=>{let d=document.createElement('span');if(i===0)d.className='on';dots.appendChild(d);});
 setInterval(()=>{qi=(qi+1)%quotes.length;qt.style.opacity=0;setTimeout(()=>{qt.textContent=quotes[qi];qt.style.opacity=1;[...dots.children].forEach((c,j)=>c.className=j===qi?'on':'');},200);},2600);
 const no=document.getElementById('no');
-function move(){const pad=30;const maxX=window.innerWidth-no.offsetWidth-pad;const maxY=window.innerHeight-no.offsetHeight-pad;no.style.position='fixed';no.style.left=Math.max(pad,Math.random()*maxX)+'px';no.style.top=Math.max(pad,Math.random()*maxY)+'px';}
-no.addEventListener('mouseover',move);
-no.addEventListener('touchstart',e=>{e.preventDefault();move();});
-function heart(){const h=document.createElement('div');h.className='hearts';h.textContent=['❤️','💖','😍','💘','😘'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*1+1.2)+'rem';h.style.animationDuration=(Math.random()*2+3)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),5000);}
+function move(){const pad=20;const maxX=window.innerWidth-no.offsetWidth-pad;const maxY=window.innerHeight-no.offsetHeight-pad;no.style.position='fixed';no.style.left=Math.max(pad,Math.random()*maxX)+'px';no.style.top=Math.max(pad,Math.random()*maxY)+'px';}
+no.addEventListener('mouseover',move);no.addEventListener('touchstart',e=>{e.preventDefault();move();});
+function heart(){const h=document.createElement('div');h.className='hearts';h.textContent=['❤️','💖','😍','💘'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(Math.random()*0.5+1)+'rem';h.style.animationDuration=(Math.random()*2+3)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),5000);}
 document.getElementById('yes').addEventListener('click',()=>{
-document.getElementById('q').style.display='none';
-document.getElementById('s').style.display='block';
-if(player&&player.playVideo)player.playVideo();
-setInterval(heart,250);
-for(let i=0;i<14;i++)setTimeout(heart,i*120);
+document.getElementById('q').style.display='none';document.getElementById('s').style.display='block';
+if(player&&player.playVideo)player.playVideo();setInterval(heart,280);for(let i=0;i<12;i++)setTimeout(heart,i*120);
 });
-
-const CALLMEBOT_APIKEY = "PUT_YOUR_CALLMEBOT_APIKEY_HERE";
-const YOUR_PHONE = "254745169071";
-
+const CALLMEBOT_APIKEY="PUT_YOUR_CALLMEBOT_APIKEY_HERE";const YOUR_PHONE="254745169071";
 document.getElementById('directBtn').addEventListener('click',async()=>{
 const msg=document.getElementById('secretMsg').value.trim()||"I miss you too Vinny ❤️";
-const status=document.getElementById('status');
-status.style.display='block';
-status.textContent='⏳ Sending secret...';
-
+const status=document.getElementById('status');status.style.display='block';status.textContent='⏳ Sending secret...';
 if(CALLMEBOT_APIKEY.includes("PUT_YOUR")){
-status.textContent='⚠️ Add your CallMeBot API key to enable direct send — opening WhatsApp backup for now...';
-setTimeout(()=>{
-window.open(`https://wa.me/${YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
-},800);
-return;
+status.textContent='⚠️ Direct API not set — opening WhatsApp backup...';
+setTimeout(()=>{window.open(`https://wa.me/${YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');status.textContent='Opened WhatsApp backup — add API key to send without opening.';},700);return;
 }
-try{
-const url=`https://api.callmebot.com/whatsapp.php?phone=${YOUR_PHONE}&text=${encodeURIComponent("SECRET REPLY: "+msg)}&apikey=${CALLMEBOT_APIKEY}`;
-await fetch(url);
-status.textContent='✓ Message delivered directly to Vinny\'s WhatsApp! 🔒❤️';
-}catch(e){
-status.textContent='✓ Sent! (If API blocked by CORS, use backup button)';
-window.open(`https://wa.me/${YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
-}
+try{await fetch(`https://api.callmebot.com/whatsapp.php?phone=${YOUR_PHONE}&text=${encodeURIComponent("SECRET: "+msg)}&apikey=${CALLMEBOT_APIKEY}`);status.textContent='✓ Delivered DIRECT to Vinny 🔒❤️';}catch(e){status.textContent='Opening WhatsApp...';window.open(`https://wa.me/${YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');}
 });
 </script>
 </body>
