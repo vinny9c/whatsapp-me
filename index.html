@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat - Vinny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- WhatsApp Header -->
+        <header class="chat-header">
+            <div class="header-left">
+                <span class="back-arrow" id="back-btn">←</span>
+                <div class="avatar-container">
+                    <img src="https://picsum.photos" alt="Vinny" class="header-avatar">
+                    <span class="online-dot"></span>
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Vinny</span>
+                    <span class="user-status">Online</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <span class="icon" title="Video Call">📹</span>
+                <span class="icon" id="call-btn" title="Call">📞</span>
+                <span class="icon" title="Menu">⋮</span>
+            </div>
+        </header>
+
+        <!-- Chat History Area -->
+        <main class="chat-body" id="chat-body">
+            <!-- Music and Contact Info Bubble (Scrolled Up) -->
+            <div class="msg-bubble received music-bubble" id="audio-player-card">
+                <blockquote class="whatsapp-quote">
+                    “Basi mwambieni nampenda, Sawa...”
+                </blockquote>
+                <div class="location-contact">
+                    Nairobi, KE • <span class="phone-number">0745169071</span>
+                </div>
+                <span class="msg-time">11:18 AM</span>
+            </div>
+
+            <!-- Sent Image Message Bubble matching user picture layout -->
+            <div class="msg-bubble sent image-bubble">
+                <img src="https://picsum.photos" class="attached-photo" id="chat-display-photo" alt="Sent Image">
+                <span class="msg-time image-time-overlay">11:18 AM <span class="blue-ticks">✓✓</span></span>
+            </div>
+        </main>
+
+        <!-- Bottom Input Action Bar -->
+        <footer class="chat-footer">
+            <div class="input-wrapper">
+                <span class="footer-icon">😊</span>
+                <input type="text" id="message-input" placeholder="Type a message" value="">
+                <span class="footer-icon">📎</span>
+                <span class="footer-icon" id="camera-btn" style="cursor: pointer;">📷</span>
+            </div>
+            <button class="action-btn mic-mode" id="action-btn">
+                <span id="action-icon">🎙️</span>
+            </button>
+        </footer>
+    </div>
+
+    <!-- Native elements for local file access and background track playing -->
+    <input type="file" id="hidden-photo-input" accept="image/*" style="display: none;">
+    <audio id="hidden-audio-track" src="https://soundhelix.com" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

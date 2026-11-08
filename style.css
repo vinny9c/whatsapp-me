@@ -1,0 +1,252 @@
+:root {
+    --wa-header-green: #005e4c;
+    --wa-bg-color: #efeae2;
+    --wa-bubble-sent: #d9fdd3;
+    --wa-bubble-received: #ffffff;
+    --wa-text-main: #111b21;
+    --wa-text-muted: #667781;
+    --wa-link-blue: #53bdeb;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 430px;
+    height: 90vh;
+    background-color: var(--wa-bg-color);
+    background-image: url('https://githubusercontent.com');
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--wa-header-green);
+    color: white;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-arrow {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.online-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #25d366;
+    border: 1.5px solid var(--wa-header-green);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.user-status {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.header-right {
+    display: flex;
+    gap: 16px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg-bubble {
+    max-width: 85%;
+    padding: 8px 12px 6px 12px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    line-height: 1.4;
+    color: var(--wa-text-main);
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.received {
+    background-color: var(--wa-bubble-received);
+    align-self: flex-start;
+    border-top-left-radius: 0;
+}
+
+.sent {
+    background-color: var(--wa-bubble-sent);
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+/* Image bubble container changes */
+.image-bubble {
+    padding: 4px 4px 4px 4px !important;
+    max-width: 75%;
+    overflow: hidden;
+}
+
+.attached-photo {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    object-fit: cover;
+    max-height: 280px;
+}
+
+.image-time-overlay {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white !important;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 9px !important;
+}
+
+.image-time-overlay .blue-ticks {
+    color: #34b7f1;
+}
+
+.msg-time {
+    display: block;
+    font-size: 10px;
+    color: var(--wa-text-muted);
+    text-align: right;
+    margin-top: 4px;
+}
+
+.blue-ticks {
+    color: var(--wa-link-blue);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.music-bubble {
+    width: 290px;
+    cursor: pointer;
+}
+
+.whatsapp-quote {
+    border-left: 3px solid #00a884;
+    padding-left: 8px;
+    color: #54656f;
+    font-style: italic;
+    font-size: 14px;
+    margin: 4px 0 8px 0;
+}
+
+.location-contact {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.chat-footer {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+}
+
+.input-wrapper {
+    background-color: white;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 25px;
+    gap: 12px;
+}
+
+.footer-icon {
+    font-size: 19px;
+    color: var(--wa-text-muted);
+}
+
+#message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--wa-text-main);
+}
+
+.action-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.send-mode {
+    background-color: #00a884;
+}
+
+.mic-mode {
+    background-color: var(--wa-header-green);
+}
