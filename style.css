@@ -28,7 +28,7 @@ body {
     max-width: 430px;
     height: 90vh;
     background-color: var(--wa-bg-color);
-    background-image: url('https://githubusercontent.com');
+    background-image: url('vin1.jpg');
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
