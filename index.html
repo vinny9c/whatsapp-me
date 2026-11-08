@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +27,7 @@
                 <span class="icon" title="Menu">⋮</span>
             </div>
         </header>
+
         <main class="chat-body" id="chat-body">
             <div class="msg-bubble received music-bubble" id="audio-player-card">
                 <blockquote class="whatsapp-quote">
@@ -39,9 +39,9 @@
                 <span class="msg-time">11:18 AM</span>
             </div>
 
-            <!-- Sent Image Message Bubble matching user picture layout -->
+            <!-- Sent Image Message Bubble -->
             <div class="msg-bubble sent image-bubble">
-                <img src="https://picsum.photos" class="attached-photo" id="chat-display-photo" alt="Sent Image">
+                <img src="vin2.jpg" class="attached-photo" id="chat-display-photo" alt="Sent image">
                 <span class="msg-time image-time-overlay">11:18 AM <span class="blue-ticks">✓✓</span></span>
             </div>
         </main>
@@ -67,141 +67,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-=======
-<html>
-  <body>
-
-  <div class="envelope"></div>
-  <div id="yt-player"></div>
-
-  <!-- Question Screen -->
-  <div class="card" id="q">
-    <div class="stamp">DECRYPTED</div>
-    <h1>Do you miss me? 🥺</h1>
-    <p class="sub">CLASSIFIED // EYES ONLY — FROM: VINNY</p>
-    <div class="quote-box"><p class="quote-text" id="qt">“Wewe na mimi, hakuna wa kutuachanisha.”</p></div>
-    <div class="q-dots" id="dots"></div>
-    <div class="btns">
-      <button id="yes">YES ❤️</button>
-      <button id="no">No</button>
-    </div>
-  </div>
-
-  <!-- Success Screen -->
-  <div class="card" id="s" style="display:none">
-    <div class="stamp" style="background:#ff2e6c">I MISS YOU TOO</div>
-    <h1>I miss you too! ❤️</h1>
-    <div class="quote-box"><p class="quote-text">“Basi mwambieni nampenda, Sawa...” — Jay Melody</p></div>
-    <div class="photo-wrap">
-      <img src="https://picsum.photos" alt="Vinny" class="photo">
-      <div class="online-dot"></div>
-    </div>
-    <div class="name-line"><b>Vinny</b> • Online • Nairobi, KE • 0745169071</div>
-    <div class="music-bar"><div class="dot"></div>🎶 Jay Melody — Sawa [Wewe na Mimi] — Playing</div>
-    <p style="font-family:'Special Elite';font-size:.82rem">Write a secret reply — DIRECT to Vinny:</p>
-    <textarea id="secretMsg" placeholder="Type here... e.g. I miss you too Vinny 😘"></textarea>
-    <p class="status" id="status"></p>
-    <a class="wa" id="directBtn" href="javascript:void(0)">SEND SECRET DIRECT TO VINNY 🔒</a>
-    <a class="wa wa2" href="https://wa.me😘%20I%20miss%20you%20too%20❤️" target="_blank">OPEN IN WHATSAPP (BACKUP)</a>
-  </div>
-  <script src="https://youtube.com"></script>
-  <script>
-    let player;
-    const YT_ID="-ZLUogRX29Y"; 
-
-    function onYouTubeIframeAPIReady(){
-      player=new YT.Player('yt-player',{
-        videoId:YT_ID,
-        playerVars:{playsinline:1,loop:1,playlist:YT_ID},
-        events:{onReady:e=>e.target.setVolume(70)}
-      });
-    }
-
-    const quotes=[
-      "“Wewe na mimi, hakuna wa kutuachanisha.”",
-      "“Basi mwambieni nampenda... Sawa, sawa, sawa.”",
-      "“Distance means so little when someone means so much.”",
-      "“You are my today and all of my tomorrows.”"
-    ];
-    
-    let qi=0;
-    const qt=document.getElementById('qt');
-    const dots=document.getElementById('dots');
-    
-    quotes.forEach((_,i)=>{
-      let d=document.createElement('span');
-      if(i===0)d.className='on';
-      dots.appendChild(d);
-    });
-
-    setInterval(()=>{
-      qi=(qi+1)%quotes.length;
-      qt.style.opacity=0;
-      setTimeout(()=>{
-        qt.textContent=quotes[qi];
-        qt.style.opacity=1;
-        [...dots.children].forEach((c,j)=>c.className=j===qi?'on':'');
-      },250);
-    },2800);
-
-    const no=document.getElementById('no');
-    function move(){
-      const pad=25;
-      const maxX=window.innerWidth-no.offsetWidth-pad;
-      const maxY=window.innerHeight-no.offsetHeight-pad;
-      no.style.position='fixed';
-      no.style.left=Math.max(pad,Math.random()*maxX)+'px';
-      no.style.top=Math.max(pad,Math.random()*maxY)+'px';
-    }
-    
-    no.addEventListener('mouseover',move);
-    no.addEventListener('touchstart',e=>{e.preventDefault();move();});
-
-    function heart(){
-      const h=document.createElement('div');
-      h.className='hearts';
-      h.textContent=['❤️','💖','😍','💘'][Math.floor(Math.random()*4)];
-      h.style.left=Math.random()*100+'vw';
-      h.style.fontSize=(Math.random()*0.5+1)+'rem';
-      h.style.animationDuration=(Math.random()*2+3)+'s';
-      document.body.appendChild(h);
-      setTimeout(()=>h.remove(),5000);
-    }
-
-    document.getElementById('yes').addEventListener('click',()=>{
-      document.getElementById('q').style.display='none';
-      document.getElementById('s').style.display='block';
-      if(player&&player.playVideo)player.playVideo();
-      setInterval(heart,280);
-      for(let i=0;i<12;i++)setTimeout(heart,i*120);
-    });
-
-    const CALLMEBOT_APIKEY="PUT_YOUR_CALLMEBOT_APIKEY_HERE";
-    const YOUR_PHONE="254745169071";
-
-    document.getElementById('directBtn').addEventListener('click',async()=>{
-      const msg=document.getElementById('secretMsg').value.trim()||"I miss you too Vinny ❤️";
-      const status=document.getElementById('status');
-      status.style.display='block';
-      status.textContent='⏳ Sending secret...';
-      
-      if(CALLMEBOT_APIKEY.includes("PUT_YOUR")){
-        status.textContent='⚠️ Direct API not set — opening WhatsApp backup...';
-        setTimeout(()=>{
-          window.open(`https://wa.me{YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
-          status.textContent='Opened WhatsApp backup.';
-        },700);
-        return;
-      }
-      try{
-        await fetch(`https://callmebot.com{YOUR_PHONE}&text=${encodeURIComponent("SECRET: "+msg)}&apikey=${CALLMEBOT_APIKEY}`);
-        status.textContent='✓ Delivered DIRECT to Vinny 🔒❤️';
-      }catch(e){
-        status.textContent='Opening WhatsApp...';
-        window.open(`https://wa.me{YOUR_PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
-      }
-    });
-  </script>
-</body>
-</html>
->>>>>>> f0a2f0b37c1a6208e814daee9fc705e82ac12194
