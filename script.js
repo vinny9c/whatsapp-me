@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
     }
-
     document.getElementById('back-btn').addEventListener('click', () => {
         alert("Returning to main room window...");
     });
